@@ -31,7 +31,7 @@ def ReadFreebase(handler, filename, auxfile, block_len, languages):
             break
         _buff  =  lines[-1]
     dd  =  datetime.today().strftime("%d/%m  -  %H:%M:%S")
-    print("%s  :  Reader  is  done  :  %d  lines"  %  (dd,  l))
+    print("%s  :  Reader  is  done  :  %d  lines"  %  (dd,  line_num))
 
 
 def CreatingTSV(auxfile):
@@ -40,7 +40,7 @@ def CreatingTSV(auxfile):
     mid = ''
     dic = {}
     count = 1
-    with gzip.open(dumpfile,  'rt') as dump:
+    with gzip.open(auxfile,  'rt') as dump:
         for line in dump:
             count += 1
             if count % 1000000 == 0:
@@ -87,12 +87,11 @@ def Flush(auxfile, maps):
 if  __name__  ==  '__main__':
     freebase_path  =  sys.argv[1]
     basename  =  os.path.basename(freebase_path)
-    aux_file = 'freebase_wikipedia_dump.gz'
+    auxfile = 'freebase_wikipedia_dump.gz'
     dump =  gzip.open(freebase_path, 'rt')
     languages = ['en']
     block_len = 1024 * 1024
-    ReadFreebase(dump,  dump.name, aux_file, block_len, languages)
+    #ReadFreebase(dump,  dump.name, aux_file, block_len, languages)
     dump.close()
     CreatingTSV(auxfile)
-
 
