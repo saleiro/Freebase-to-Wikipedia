@@ -8,7 +8,6 @@ Author:  Pedro  Saleiro (pssc@fe.up.pt)
 
 import  sys,  re,  os,  gzip,  zlib
 
-
 class  Parser():
     def  __init__(self,  basename, languages, auxfile):
         self.langs = languages
