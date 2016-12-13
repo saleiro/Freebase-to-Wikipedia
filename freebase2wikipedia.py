@@ -91,7 +91,7 @@ if  __name__  ==  '__main__':
     dump =  gzip.open(freebase_path, 'rt')
     languages = ['en']
     block_len = 1024 * 1024
-    #ReadFreebase(dump,  dump.name, aux_file, block_len, languages)
+    ReadFreebase(dump,  dump.name, aux_file, block_len, languages)
     dump.close()
     CreatingTSV(auxfile)
 
