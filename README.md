@@ -1,4 +1,4 @@
-# Freebase-2-Wikipedia
+# Freebase-to-Wikipedia
 
 This repository contains a Freebase dump parser that extracts Freebase IDs (MID), entity name and links to Wikipedia (entity page url and curid). 
 It works for all languages of Wikipedia available in the Freebase triples dump (default is 'en'). 
